@@ -86,7 +86,7 @@ export default class Component extends React.Component {
                 display: 'inline-block',
                 cursor: 'pointer',
               }} onClick={ () =>
-                this.setState({ displayColorPicker: !this.state.displayColorPickerGradient })
+                this.setState({ displayColorPickerGradient: !this.state.displayColorPickerGradient })
               }>
                 <div style={{
                 width: '36px',
@@ -106,7 +106,7 @@ export default class Component extends React.Component {
                   bottom: '0px',
                   left: '0px',
                 }} onClick={ () =>
-                  this.setState({ displayColorPicker: false })
+                  this.setState({ displayColorPickerGradient: false })
                 }/>
                 <SketchPicker color={ this.state.medalionColor } onChange={
                   (color) => this.setState({ medalionColor: color.hex })
