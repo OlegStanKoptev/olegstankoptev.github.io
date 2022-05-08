@@ -7,24 +7,14 @@ import './App.css';
 
 export default class Component extends React.Component {
   state = {
-    displayColorPicker: false,
+    displayColorPickerGradient: false,
+    displayColorPickerBorder: false,
     activeFontFamily: "Open Sans",
     fontSize: 200,
     hasBorder: true,
     borderWidth: 4,
+    borderColor: '#fff',
     medalionColor: '#52057F',
-  };
-
-  handleClick = () => {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker })
-  };
-
-  handleClose = () => {
-    this.setState({ displayColorPicker: false })
-  };
-
-  handleChange = (color) => {
-    this.setState({ medalionColor: color.hex })
   };
 
   handleSavePng = () => { 
@@ -62,7 +52,7 @@ export default class Component extends React.Component {
               borderRadius: '200px',
               border: this.state.hasBorder ? 'solid' : 'none',
               borderWidth: `${this.state.borderWidth}px`,
-              borderColor: 'white',
+              borderColor: this.state.borderColor,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -95,7 +85,9 @@ export default class Component extends React.Component {
                 boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
                 display: 'inline-block',
                 cursor: 'pointer',
-              }} onClick={ this.handleClick }>
+              }} onClick={ () =>
+                this.setState({ displayColorPicker: !this.state.displayColorPickerGradient })
+              }>
                 <div style={{
                 width: '36px',
                 height: '14px',
@@ -103,7 +95,7 @@ export default class Component extends React.Component {
                 background: this.state.medalionColor,
               }} />
               </div>
-              { this.state.displayColorPicker ? <div style={{
+              { this.state.displayColorPickerGradient ? <div style={{
                   position: 'absolute',
                   zIndex: '2',
                 }}>
@@ -113,8 +105,12 @@ export default class Component extends React.Component {
                   right: '0px',
                   bottom: '0px',
                   left: '0px',
-                }} onClick={ this.handleClose }/>
-                <SketchPicker color={ this.state.medalionColor } onChange={ this.handleChange } />
+                }} onClick={ () =>
+                  this.setState({ displayColorPicker: false })
+                }/>
+                <SketchPicker color={ this.state.medalionColor } onChange={
+                  (color) => this.setState({ medalionColor: color.hex })
+                } />
               </div> : null }
             </div>
           </div>
@@ -189,6 +185,57 @@ export default class Component extends React.Component {
               }
             />
           </div>
+          
+
+          <div style={{
+            marginTop: '12px',
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+            <div style={{
+              flex: 1,
+              marginRight: '20px',
+            }}>Border Color</div>
+            <div>
+              <div style={{
+                flex: 1,
+                padding: '5px',
+                background: '#fff',
+                borderRadius: '1px',
+                boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+                display: 'inline-block',
+                cursor: 'pointer',
+              }} onClick={ () =>
+                this.setState({ displayColorPickerBorder: !this.state.displayColorPickerBorder })
+              }>
+                <div style={{
+                width: '36px',
+                height: '14px',
+                borderRadius: '2px',
+                background: this.state.medalionColor,
+              }} />
+              </div>
+              { this.state.displayColorPickerBorder ? <div style={{
+                  position: 'absolute',
+                  zIndex: '2',
+                }}>
+                <div style={{
+                  position: 'fixed',
+                  top: '0px',
+                  right: '0px',
+                  bottom: '0px',
+                  left: '0px',
+                }} onClick={ () =>
+                  this.setState({ displayColorPickerBorder: false })
+                }/>
+                <SketchPicker color={ this.state.borderColor } onChange={
+                  (color) => this.setState({ borderColor: color.hex })
+                } />
+              </div> : null }
+            </div>
+          </div>
+
+
           <div style={{
             marginTop: '12px',
           }}>
