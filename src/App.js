@@ -1,6 +1,6 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
-import FontPicker from 'font-picker-react';
+import FontPicker from '@olegstankoptev/font-picker-react';
 import { toPng, toSvg } from 'html-to-image';
 import download from 'downloadjs';
 import './App.css';
