@@ -1,6 +1,6 @@
 import React from 'react';
 import { SketchPicker } from 'react-color';
-import FontPicker from "font-picker-react";
+import FontPicker from 'font-picker-react';
 import { toPng, toSvg } from 'html-to-image';
 import download from 'downloadjs';
 import './App.css';
@@ -23,13 +23,6 @@ export default class Component extends React.Component {
         download(dataUrl, 'medalion.png');
       });
   }
-
-  // handleSaveSvg = () => {
-  //   toSvg(document.getElementById('medalion'))
-  //     .then(function (dataUrl) {
-  //       download(dataUrl, 'medalion.svg');
-  //     });
-  // }
 
   render() {
     return (
@@ -124,13 +117,14 @@ export default class Component extends React.Component {
               marginRight: '20px',
             }}>Font Family</div>
             <FontPicker
-                apiKey="AIzaSyCrOwwQKcQB-8Kn1Tth3ACOhex0nf9tAj0"
-                activeFontFamily={this.state.activeFontFamily}
-                onChange={(nextFont) =>
-                  this.setState({
-                      activeFontFamily: nextFont.family,
-                  })
-                }
+              apiKey="AIzaSyCrOwwQKcQB-8Kn1Tth3ACOhex0nf9tAj0"
+              activeFontFamily={this.state.activeFontFamily}
+              onChange={(nextFont) =>
+                this.setState({
+                    activeFontFamily: nextFont.family,
+                })
+              }
+              configureFontManager={(fm) => fm.addFont('Faustina', 0)}
             />
           </div>
           <div style={{

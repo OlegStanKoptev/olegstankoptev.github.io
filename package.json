@@ -5,7 +5,7 @@
   "homepage": "https://olegstankoptev.github.io",
   "dependencies": {
     "downloadjs": "^1.4.7",
-    "font-picker-react": "^3.5.2",
+    "font-picker-react": "https://github.com/OlegStanKoptev/font-picker-react/tarball/02fc1a55066b575140b4d2526396cca19e4ea16c",
     "html-to-image": "^1.9.0",
     "react": "^16.14.0",
     "react-color": "^2.19.3",
