@@ -68,11 +68,11 @@ a.sitename, a:visited.sitename {
 }
 
 .show {
-    background-image: url(assets/down-arrow-icon.png);
+    background-image: url(/down-arrow-icon.png);
 }
 
 .hide {
-    background-image: url(assets/up-arrow-icon.png);
+    background-image: url(/up-arrow-icon.png);
 }
 
 .hero {
@@ -101,7 +101,7 @@ a.sitename, a:visited.sitename {
     align-self: flex-end;
     position: relative;
     bottom: 8px;
-    background: url(assets/btn_learn.png);
+    background: url(/btn_learn.png);
     background-size: 100% 105%;
     line-height: 1.2;
 }
@@ -116,7 +116,7 @@ a.sitename, a:visited.sitename {
 }
 
 .sections-container {
-    background-image: url(assets/content-back.png);
+    background-image: url(/content-back.png);
     background-repeat: no-repeat;
     background-size: 100%;
 }
@@ -185,7 +185,7 @@ a.sitename, a:visited.sitename {
     } */
 
     .hero {
-        background-image: url("assets/hero-back-no-logo.png");
+        background-image: url(/hero-back-no-logo.png);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50%;

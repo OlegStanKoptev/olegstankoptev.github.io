@@ -2,8 +2,8 @@
 @import url(http://fonts.googleapis.com/css?family=Signika:600|Varela+Round);
 @font-face {
   font-family: 'breathe_fireregular';
-  src: url('breathefire-65pg-webfont.woff2') format('woff2'),
-       url('breathefire-65pg-webfont.woff') format('woff');
+  src: url('/breathefire-65pg-webfont.woff2') format('woff2'),
+       url('/breathefire-65pg-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
