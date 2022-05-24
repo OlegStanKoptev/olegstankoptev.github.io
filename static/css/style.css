@@ -1,0 +1,247 @@
+.fixed-nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 44px;
+    background-color: #000000bd;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
+
+/* The element at the top of the page right after the fixed navigation bar
+MUST have sufficient top margin or else it will be covered by the bar */
+/* .content {
+    margin-top: 20px;
+} */
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li, .fixed-nav-bar a { 
+    height: 50px;
+    line-height: 50px;
+}
+.menu {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+.menu a, .menu a:visited {
+    color: #ffffff;
+}
+.menu a:hover, .menu a:target {
+    color: #ebebeb;
+}
+.menu-items {
+    display: inline-block;
+}
+.sitename {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 10px;
+    font-family: "breathe_fireregular";
+}
+a.sitename, a:visited.sitename {
+    color: #e0e0e0;
+}
+.menu-items li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.menu-items a {
+    text-decoration: none;
+}
+.show, .hide {
+    display: none;
+    padding-left: 15px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center left;
+    color: #dde1e2;
+}
+
+.show {
+    background-image: url(assets/down-arrow-icon.png);
+}
+
+.hide {
+    background-image: url(assets/up-arrow-icon.png);
+}
+
+.hero {
+    display: grid;
+    justify-items: center;
+    min-height: 300px;
+}
+
+.hero-logo {
+    display: none;
+    margin-top: 50px;
+    z-index: 2;
+    align-self: flex-start;
+    height: 160px;
+}
+
+.hero-back, .learn-button, .hero-logo {
+    grid-area: 1 / 1;
+}
+
+.hero .hero-back {
+    width: 100%;
+}
+
+.learn-button {
+    align-self: flex-end;
+    position: relative;
+    bottom: 8px;
+    background: url(assets/btn_learn.png);
+    background-size: 100% 105%;
+    line-height: 1.2;
+}
+
+.learn-button a {
+    font-size: 24px;
+    color: white;
+    text-transform: capitalize;
+    
+    display: block;
+    padding: 20px 40px;
+}
+
+.sections-container {
+    background-image: url(assets/content-back.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.sections .side-img {
+    object-fit: scale-down;
+    width: 40%;
+}
+
+.horizontal-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-text {
+    margin-right: 40px;
+}
+
+.key-points-container {
+    margin-top: 40px;
+    padding: 0 16px;
+}
+
+.key-points {
+    text-align: center;
+    flex-grow: 1;
+    align-self: center;
+}
+
+.key-points-container .lizard {
+    object-fit: scale-down;
+    width: 30%;
+}
+
+.key-points-container .warrior {
+    object-fit: scale-down;
+    width: 30%;
+}
+
+#credits {
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    color: grey;
+    margin: 20px 40px;
+}
+
+@media only screen and (max-width: 800px) {
+    .horizontal-container {
+        flex-direction: column-reverse;
+    }
+    .sections .side-img {
+        width: 80%;
+        align-self: center;
+    }
+    .about-text {
+        margin-right: 0;
+        padding: 0 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* .learn-button a {
+        font-size: 18px;
+        padding: 10px 20px;
+    } */
+
+    .hero {
+        background-image: url("assets/hero-back-no-logo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
+
+    .hero-logo {
+        display: block;
+    }
+
+    .hero-back {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .menu { 
+        position: relative;
+        width: 100%;
+    }
+    .sitename {
+        position: absolute;
+        top: 0;
+        left: 16px;
+        margin-left: 12px;
+    }
+    .menu-items {
+        display: none; 
+        width: 100%;
+        margin-top: 50px;
+        background-color: #008378;
+    }
+    .menu-items li {
+        display: block;
+        text-align: center;
+    }
+    .show, .hide {  
+        position: absolute;
+        top: 0;
+        right: 15px;
+    }
+    .show {
+        display: inline-block;
+    }
+    .hide {
+        display: none;
+    }
+    #menu:target .show {
+        display: none;
+    }
+    #menu:target .hide, #menu:target .menu-items {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 220px) {
+    .sitename, .show, .hide {
+        font-size: 14px;
+    }
+}
