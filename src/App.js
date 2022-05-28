@@ -14,7 +14,8 @@ export default class Component extends React.Component {
     hasBorder: true,
     borderWidth: 4,
     borderColor: "#fff",
-    medalionColor: "#52057F"
+    medalionColor: "#52057F",
+    verticalOffset: 0
   };
 
   handleSavePng = () => {
@@ -54,7 +55,10 @@ export default class Component extends React.Component {
               contenteditable="true"
               className="apply-font"
               style={{
-                fontSize: `${this.state.fontSize}px`
+                display: "block",
+                position: "relative",
+                fontSize: `${this.state.fontSize}px`,
+                top: `${this.state.verticalOffset}px`
               }}
             >
               N
@@ -308,6 +312,34 @@ export default class Component extends React.Component {
                 </div>
               ) : null}
             </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: "12px",
+              display: "flex",
+              alignItems: "center"
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                marginRight: "20px"
+              }}
+            >
+              Vertical Offset
+            </div>
+            <input
+              type="number"
+              min={-300}
+              max={300}
+              value={this.state.verticalOffset}
+              onChange={(e) =>
+                this.setState({
+                  verticalOffset: e.target.value
+                })
+              }
+            />
           </div>
 
           <div
